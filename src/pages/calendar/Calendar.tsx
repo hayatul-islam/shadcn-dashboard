@@ -1,3 +1,4 @@
+import DashboardFooter from "@/components/DashboardFooter";
 import DashboardLayout from "@/components/DashboardLayout";
 import Header from "@/components/Header";
 import LeftSidebar from "@/components/LeftSidebar";
@@ -25,6 +26,7 @@ const Calendar = () => {
           <div className="w-full px-8 space-y-6">
             <TableHeader />
             <TableCom />
+            <DashboardFooter />
           </div>
         </div>
       </div>
