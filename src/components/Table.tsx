@@ -1,12 +1,13 @@
 import {
   Table,
   TableBody,
-  TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Button } from "./ui/button";
+import { tripData } from "@/constants/constants";
+import { MoreVertical } from "lucide-react";
+import TableDataRow from "./TableRow";
 import { Checkbox } from "./ui/checkbox";
 
 const TableCom = () => {
@@ -15,29 +16,26 @@ const TableCom = () => {
       <TableHeader>
         <TableRow>
           <TableHead>
-            <Checkbox className="text-white" />
+            <Checkbox className="text-white pt-[8px]" />
           </TableHead>
 
           <TableHead>Driver</TableHead>
           <TableHead>Status</TableHead>
           <TableHead>Pick address</TableHead>
           <TableHead>Drop address</TableHead>
-          <TableHead className="text-right">pickup</TableHead>
+          <TableHead className="flex justify-between uppercase">
+            <div></div>
+            <div className="flex items-center space-x-2">
+              <span>Pickup</span>
+              <MoreVertical size={16} className="text-right" />
+            </div>
+          </TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow>
-          <TableCell>
-            <Checkbox className="text-white" />
-          </TableCell>
-          <TableCell>BJ John Smith</TableCell>
-          <TableCell>
-            <Button>d</Button>
-          </TableCell>
-          <TableCell>781 Hilll Junctions Apt. 411</TableCell>
-          <TableCell>781 Hilll Junctions Apt. 411</TableCell>
-          <TableCell className="text-right">04:00 PM</TableCell>
-        </TableRow>
+        {tripData?.map((data, idx) => (
+          <TableDataRow data={data} key={idx} />
+        ))}
       </TableBody>
     </Table>
   );
