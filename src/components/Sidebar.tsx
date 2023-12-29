@@ -114,8 +114,8 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className="w-[284px] border-x border-stroke-100">
-        <h2 className="text-[24px] font-medium p-8 border-b h-[92px] border-stroke-100">
+      <div className="w-[284px] border-x border-stroke-100 overflow-y-auto h-[100vh] no-scrollbar">
+        <h2 className="text-[24px] font-medium p-8 border-b h-[92px] border-stroke-100 bg-white sticky top-0 z-50">
           Calendar
         </h2>
         <div className="space-y-6 px-6">
