@@ -8,7 +8,7 @@ import { ContextProvider } from "@/context/Context";
 import { useContext } from "react";
 
 const Calendar = () => {
-  const { isFullView } = useContext(ContextProvider);
+  const { isFullView }: any = useContext(ContextProvider);
   return (
     <DashboardLayout>
       <div className="flex ">

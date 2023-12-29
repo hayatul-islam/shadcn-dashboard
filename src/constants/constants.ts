@@ -5,7 +5,22 @@ export const status: Array<string> = [
     "Canceled",
   ];
 
- export const tripData = [
+  interface TripData {
+    id: number;
+    driver: string;
+    status: string;
+    pick_address: string;
+    drop_address: string;
+    pickup: string;
+    appointment_time: string;
+    drop_time: string;
+    account_name: string;
+    patient_name: string;
+    miles: string;
+    vehicle_type: string;
+  }
+
+ export const tripData:TripData[]  = [
   {
     id: 1,
     driver: "John Smith",

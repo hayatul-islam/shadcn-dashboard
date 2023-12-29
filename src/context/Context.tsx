@@ -1,11 +1,24 @@
-import { createContext, useState } from "react";
+import { Dispatch, SetStateAction, createContext, useState } from "react";
 
-export const ContextProvider = createContext();
+// Default context values (replace this with your actual default values)
+const defaultContextValues = {
+  isFullView: false,
+  setIsFullView: () => {},
+};
+interface ContextProps {
+  isFullView: boolean;
+  setIsFullView: Dispatch<SetStateAction<boolean>>;
+}
 
-export const Context = ({ children }) => {
+// Create a context with default values
+export const ContextProvider =
+  createContext<ContextProps>(defaultContextValues);
+
+// Context component
+export const Context = ({ children }: any) => {
   const [isFullView, setIsFullView] = useState<boolean>(false);
 
-  const value = {
+  const value: ContextProps = {
     isFullView,
     setIsFullView,
   };

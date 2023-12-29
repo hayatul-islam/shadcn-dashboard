@@ -12,8 +12,9 @@ import { useContext, useState } from "react";
 import TableDataRow from "./TableRow";
 
 const TableCom = () => {
-  const [selectedBulkIds, setSelectedBulkIds] = useState([]);
-  const { isFullView } = useContext(ContextProvider);
+  const [selectedBulkIds, setSelectedBulkIds] = useState<number[]>([]);
+
+  const { isFullView }: any = useContext(ContextProvider);
 
   // Handle bulk selection
   const handleBulkSelection = () => {
@@ -26,6 +27,21 @@ const TableCom = () => {
       setSelectedBulkIds(allRowIds);
     }
   };
+
+  // const [selectedBulkIds, setSelectedBulkIds] = useState([]);
+  // const { isFullView } = useContext(ContextProvider);
+
+  // // Handle bulk selection
+  // const handleBulkSelection = () => {
+  //   // If all rows are already selected, deselect all; otherwise, select all
+  //   const allSelected = selectedBulkIds.length === tripData.length;
+  //   if (allSelected) {
+  //     setSelectedBulkIds([]);
+  //   } else {
+  //     const allRowIds: number[] = tripData.map((row) => row.id);
+  //     setSelectedBulkIds(allRowIds);
+  //   }
+  // };
 
   return (
     <Table>

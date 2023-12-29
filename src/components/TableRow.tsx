@@ -9,8 +9,8 @@ import { useContext } from "react";
 import { Button } from "./ui/button";
 import { TableCell, TableRow } from "./ui/table";
 
-const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
-  const { isFullView, setIsFullView } = useContext(ContextProvider);
+const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }: any) => {
+  const { isFullView, setIsFullView }: any = useContext(ContextProvider);
   const {
     id,
     driver,
@@ -60,7 +60,7 @@ const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
 
     if (isSelected) {
       setSelectedBulkIds(
-        selectedBulkIds.filter((selectedId) => selectedId !== id)
+        selectedBulkIds.filter((selectedId: number) => selectedId !== id)
       );
     } else {
       setSelectedBulkIds([...selectedBulkIds, id]);
