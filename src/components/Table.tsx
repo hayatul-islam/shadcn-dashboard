@@ -28,21 +28,6 @@ const TableCom = () => {
     }
   };
 
-  // const [selectedBulkIds, setSelectedBulkIds] = useState([]);
-  // const { isFullView } = useContext(ContextProvider);
-
-  // // Handle bulk selection
-  // const handleBulkSelection = () => {
-  //   // If all rows are already selected, deselect all; otherwise, select all
-  //   const allSelected = selectedBulkIds.length === tripData.length;
-  //   if (allSelected) {
-  //     setSelectedBulkIds([]);
-  //   } else {
-  //     const allRowIds: number[] = tripData.map((row) => row.id);
-  //     setSelectedBulkIds(allRowIds);
-  //   }
-  // };
-
   return (
     <Table>
       <TableHeader>

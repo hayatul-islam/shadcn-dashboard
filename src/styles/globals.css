@@ -6,6 +6,7 @@
  
 body{
   font-family: 'Poppins', sans-serif;
+  background-color: white;
 }
 
 /* scrollbar hide */
@@ -16,6 +17,21 @@ body{
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  background-color: #f9fafb;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #0062FF;
+  ;
+}
+
+
 .rdp-head{
   display: none !important;
 }
