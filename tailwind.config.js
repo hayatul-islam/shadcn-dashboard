@@ -14,7 +14,10 @@ export default {
     },
     extend: {
       colors: {
-        primary: "#0062FF",
+        primary: {
+          DEFAULT: "#0062FF",
+          100: "#F1F6FF",
+        },
         black: "#191C20",
         stroke: {
           DEFAULT: "#F9FBFF",

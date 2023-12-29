@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
  
-.hover\:underline:hover {
-    text-decoration-line: none !important;
-}
 
+
+/* scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
