@@ -7,16 +7,37 @@ import {
 } from "@/components/ui/table";
 import { tripData } from "@/constants/constants";
 import { MoreVertical } from "lucide-react";
+import { useState } from "react";
 import TableDataRow from "./TableRow";
-import { Checkbox } from "./ui/checkbox";
 
 const TableCom = () => {
+  const [selectedBulkIds, setSelectedBulkIds] = useState([]);
+
+  // Handle bulk selection
+  const handleBulkSelection = () => {
+    // If all rows are already selected, deselect all; otherwise, select all
+    const allSelected = selectedBulkIds.length === tripData.length;
+    if (allSelected) {
+      setSelectedBulkIds([]);
+    } else {
+      const allRowIds = tripData.map((row) => row.id);
+      setSelectedBulkIds(allRowIds);
+    }
+  };
+
+  console.log(selectedBulkIds);
+
   return (
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>
-            <Checkbox className="text-white pt-[8px]" />
+          <TableHead className="pt-1">
+            <input
+              type="checkbox"
+              className="h-4 w-4 "
+              checked={selectedBulkIds.length === tripData.length}
+              onChange={handleBulkSelection}
+            />
           </TableHead>
 
           <TableHead>Driver</TableHead>
@@ -34,7 +55,12 @@ const TableCom = () => {
       </TableHeader>
       <TableBody>
         {tripData?.map((data, idx) => (
-          <TableDataRow data={data} key={idx} />
+          <TableDataRow
+            data={data}
+            key={idx}
+            selectedBulkIds={selectedBulkIds}
+            setSelectedBulkIds={setSelectedBulkIds}
+          />
         ))}
       </TableBody>
     </Table>

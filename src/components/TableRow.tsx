@@ -1,10 +1,15 @@
-import { ChevronDown, MoreVertical } from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { ChevronDown, MoreVertical, PenLine, Trash, View } from "lucide-react";
 import { Button } from "./ui/button";
-import { Checkbox } from "./ui/checkbox";
 import { TableCell, TableRow } from "./ui/table";
 
-const TableDataRow = ({ data }) => {
+const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
   const {
+    id,
     driver,
     status,
     pick_address,
@@ -46,10 +51,27 @@ const TableDataRow = ({ data }) => {
     rowStyle = "bg-white border-[#EFEFEF]";
   }
 
+  // Handle individual row selection
+  const handleRowSelection = () => {
+    const isSelected = selectedBulkIds.includes(id);
+    if (isSelected) {
+      setSelectedBulkIds(
+        selectedBulkIds.filter((selectedId) => selectedId !== id)
+      );
+    } else {
+      setSelectedBulkIds([...selectedBulkIds, id]);
+    }
+  };
+
   return (
     <TableRow className={`${rowStyle}`}>
       <TableCell>
-        <Checkbox className="text-white" />
+        <input
+          className="h-4 w-4 cursor-pointer rounded-[10px] border-neutral-300 "
+          type="checkbox"
+          checked={selectedBulkIds.includes(id)}
+          onChange={handleRowSelection}
+        />
       </TableCell>
       <TableCell>
         <Button className="flex gap-2 items-center bg-stroke border border-stroke-100">
@@ -75,9 +97,28 @@ const TableDataRow = ({ data }) => {
 
       <TableCell className="flex justify-between uppercase">
         <div></div>
+
         <div className="flex items-center space-x-2">
           <span>{pickup}</span>
-          <MoreVertical size={16} className="text-right" />
+          <Popover>
+            <PopoverTrigger>
+              <MoreVertical size={16} className="text-right" />
+            </PopoverTrigger>
+            <PopoverContent className="bg-white space-y-2 ">
+              <button className="flex gap-2 items-center hover:bg-[#F1F6FF] w-full p-2 rounded">
+                <View size={16} />
+                <span className="font-medium">View</span>
+              </button>
+              <button className="flex gap-2 items-center hover:bg-[#F1F6FF] w-full p-2 rounded">
+                <PenLine size={16} />
+                <span className="font-medium">Edit</span>
+              </button>
+              <button className="flex gap-2 items-center hover:bg-[#F1F6FF] w-full p-2 rounded">
+                <Trash size={16} />
+                <span className="font-medium">Delete</span>
+              </button>
+            </PopoverContent>
+          </Popover>
         </div>
       </TableCell>
     </TableRow>
