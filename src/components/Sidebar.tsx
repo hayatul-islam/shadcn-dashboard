@@ -62,7 +62,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-[88px] overflow-y-auto h-[100vh] no-scrollbar">
+    <div className="w-[88px] overflow-y-auto h-[100vh] no-scrollbar border-r border-stroke-100">
       <div className="pt-6 bg-white sticky top-0">
         <img className="mx-auto" src={logo} alt="" />
       </div>

@@ -6,12 +6,14 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { tripData } from "@/constants/constants";
+import { ContextProvider } from "@/context/Context";
 import { MoreVertical } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import TableDataRow from "./TableRow";
 
 const TableCom = () => {
   const [selectedBulkIds, setSelectedBulkIds] = useState([]);
+  const { isFullView } = useContext(ContextProvider);
 
   // Handle bulk selection
   const handleBulkSelection = () => {
@@ -20,12 +22,10 @@ const TableCom = () => {
     if (allSelected) {
       setSelectedBulkIds([]);
     } else {
-      const allRowIds = tripData.map((row) => row.id);
+      const allRowIds: number[] = tripData.map((row) => row.id);
       setSelectedBulkIds(allRowIds);
     }
   };
-
-  console.log(selectedBulkIds);
 
   return (
     <Table>
@@ -39,15 +39,28 @@ const TableCom = () => {
               onChange={handleBulkSelection}
             />
           </TableHead>
-
+          {isFullView && (
+            <>
+              <TableHead>Account Name</TableHead>
+              <TableHead>Patient name</TableHead>
+            </>
+          )}
           <TableHead>Driver</TableHead>
           <TableHead>Status</TableHead>
           <TableHead>Pick address</TableHead>
           <TableHead>Drop address</TableHead>
+          <TableHead>Pickup Time</TableHead>
+          {isFullView && (
+            <>
+              <TableHead>Appointment Time</TableHead>
+              <TableHead>Drop Time</TableHead>
+              <TableHead>Miles </TableHead>
+              <TableHead>Vehicle type </TableHead>
+            </>
+          )}
           <TableHead className="flex justify-between uppercase">
             <div></div>
             <div className="flex items-center space-x-2">
-              <span>Pickup</span>
               <MoreVertical size={16} className="text-right" />
             </div>
           </TableHead>

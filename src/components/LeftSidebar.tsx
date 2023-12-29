@@ -14,11 +14,11 @@ import { Checkbox } from "./ui/checkbox";
 const LeftSidebar = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   return (
-    <div className="border-x border-stroke-100">
+    <div className="h-full border-r border-stroke-100">
       <h2 className="text-[24px] font-medium p-8 border-b h-[92px] border-stroke-100 bg-white sticky top-0 z-50">
         Calendar
       </h2>
-      <div className="space-y-6 px-6 pt-8">
+      <div className="space-y-6 px-6 pt-8 border-r border-stroke-100">
         <Calendar mode="single" selected={date} onSelect={setDate} />
         <hr className="text-stroke-100" />
         <Search placeholder="Search trip..." />

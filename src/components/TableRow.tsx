@@ -3,11 +3,14 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { ContextProvider } from "@/context/Context";
 import { ChevronDown, MoreVertical, PenLine, Trash, View } from "lucide-react";
+import { useContext } from "react";
 import { Button } from "./ui/button";
 import { TableCell, TableRow } from "./ui/table";
 
 const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
+  const { isFullView, setIsFullView } = useContext(ContextProvider);
   const {
     id,
     driver,
@@ -53,7 +56,8 @@ const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
 
   // Handle individual row selection
   const handleRowSelection = () => {
-    const isSelected = selectedBulkIds.includes(id);
+    const isSelected: boolean = selectedBulkIds.includes(id);
+
     if (isSelected) {
       setSelectedBulkIds(
         selectedBulkIds.filter((selectedId) => selectedId !== id)
@@ -73,7 +77,13 @@ const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
           onChange={handleRowSelection}
         />
       </TableCell>
-      <TableCell>
+      {isFullView && (
+        <>
+          <TableCell className="min-w-[200px]">{account_name}</TableCell>
+          <TableCell className="min-w-[150px]">{patient_name}</TableCell>
+        </>
+      )}
+      <TableCell className="min-w-[200px]">
         <Button className="flex gap-2 items-center bg-stroke border border-stroke-100">
           <div className="flex gap-2 font-medium">
             <p className="text-primary font-medium w-[24px] h-[24px] bg-primary-100">
@@ -84,6 +94,7 @@ const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
           <ChevronDown size={14} />
         </Button>
       </TableCell>
+
       <TableCell>
         <Button
           className={` ${buttonStyle} border font-medium text-[12px] flex gap-2 items-center h-[28px]`}
@@ -92,20 +103,30 @@ const TableDataRow = ({ data, setSelectedBulkIds, selectedBulkIds }) => {
           <span>{status}</span>
         </Button>
       </TableCell>
-      <TableCell>{pick_address}</TableCell>
-      <TableCell>{drop_address}</TableCell>
-
+      <TableCell className="min-w-[220px]">{pick_address}</TableCell>
+      <TableCell className="min-w-[220px]">{drop_address}</TableCell>
+      <TableCell className="min-w-[120px]">{pickup}</TableCell>
+      {isFullView && (
+        <>
+          <TableCell className="min-w-[180px]">{appointment_time}</TableCell>
+          <TableCell className="min-w-[120px]">{drop_time}</TableCell>
+          <TableCell>{miles}</TableCell>
+          <TableCell className="min-w-[130px]">{vehicle_type}</TableCell>
+        </>
+      )}
       <TableCell className="flex justify-between uppercase">
         <div></div>
 
         <div className="flex items-center space-x-2">
-          <span>{pickup}</span>
           <Popover>
             <PopoverTrigger>
               <MoreVertical size={16} className="text-right" />
             </PopoverTrigger>
             <PopoverContent className="bg-white space-y-2 ">
-              <button className="flex gap-2 items-center hover:bg-[#F1F6FF] w-full p-2 rounded">
+              <button
+                onClick={() => setIsFullView((prev: boolean) => !prev)}
+                className="flex gap-2 items-center hover:bg-[#F1F6FF] w-full p-2 rounded"
+              >
                 <View size={16} />
                 <span className="font-medium">View</span>
               </button>
