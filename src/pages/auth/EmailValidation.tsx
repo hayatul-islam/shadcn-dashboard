@@ -16,7 +16,7 @@ const EmailVerification = () => {
   const email = query.get("email");
   const navigate = useNavigate();
 
-  const [otpVerification, { isLoading, data, isSuccess, isError, error }] =
+  const [otpVerification, { isLoading, data, isSuccess, isError }] =
     useOtpVerificationMutation();
 
   const handleSubmit = () => {
@@ -32,7 +32,7 @@ const EmailVerification = () => {
     }
     if (isError) {
       toast({
-        title: error?.data?.message,
+        title: "Something went wrong!",
       });
     }
   }, [isSuccess, isError]);

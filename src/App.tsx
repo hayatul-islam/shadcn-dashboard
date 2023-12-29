@@ -6,7 +6,9 @@ import Login from "./pages/auth/Login";
 import Calendar from "./pages/calendar/Calendar";
 
 function App() {
-  const { data } = useGetMeQuery();
+  const { data } = useGetMeQuery({});
+  console.log(data);
+
   return (
     <BrowserRouter>
       <Routes>

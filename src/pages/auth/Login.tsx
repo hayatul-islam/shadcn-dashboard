@@ -7,8 +7,7 @@ import logo from "../../assets/logo.png";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [login, { isLoading, isSuccess, isError, data, error }] =
-    useLoginMutation();
+  const [login, { isLoading, isSuccess, isError, data }] = useLoginMutation();
   const navigate = useNavigate();
 
   const handleSubmit = (e: any) => {
@@ -25,7 +24,7 @@ const Login = () => {
     }
     if (isError) {
       toast({
-        title: error?.data?.message,
+        title: "Something went wrong!",
       });
     }
   }, [isSuccess, isError]);

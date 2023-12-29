@@ -16,7 +16,7 @@ export default function PrivateRoute({ children }: any) {
         console.log(user);
         setIsCheck(true);
       }
-    }, 500);
+    }, 1000);
   }, [user, isLoading]);
 
   if (!isCheck) {
