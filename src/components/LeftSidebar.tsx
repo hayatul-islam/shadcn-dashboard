@@ -18,13 +18,8 @@ const LeftSidebar = () => {
       <h2 className="text-[24px] font-medium p-8 border-b h-[92px] border-stroke-100 bg-white sticky top-0 z-50">
         Calendar
       </h2>
-      <div className="space-y-6 px-6">
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          style={{ width: "200px" }}
-        />
+      <div className="space-y-6 px-6 pt-8">
+        <Calendar mode="single" selected={date} onSelect={setDate} />
         <hr className="text-stroke-100" />
         <Search placeholder="Search trip..." />
 

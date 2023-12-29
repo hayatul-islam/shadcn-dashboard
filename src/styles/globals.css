@@ -7,9 +7,14 @@
 /* scrollbar hide */
 .no-scrollbar::-webkit-scrollbar {
     display: none;
-  }
-  .no-scrollbar {
+}
+.no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-  
+}
+.rdp-head{
+  display: none !important;
+}
+.rdp-button{
+  border: none !important
+}
