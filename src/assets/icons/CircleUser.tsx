@@ -1,0 +1,170 @@
+const CircleUser = () => {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g opacity="0.5">
+        <circle cx="10" cy="7.5" r="2.5" stroke="#191C20" stroke-width="1.3" />
+        <circle
+          cx="10"
+          cy="7.5"
+          r="2.5"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+        />
+        <circle
+          cx="10"
+          cy="7.5"
+          r="2.5"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+        />
+        <circle
+          cx="10"
+          cy="7.5"
+          r="2.5"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+        />
+        <circle
+          cx="10"
+          cy="7.5"
+          r="2.5"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+        />
+        <circle
+          cx="10"
+          cy="7.5"
+          r="2.5"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+        />
+        <circle
+          cx="10"
+          cy="7.5"
+          r="2.5"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+        />
+      </g>
+      <circle
+        cx="9.99935"
+        cy="10.0003"
+        r="8.33333"
+        stroke="#191C20"
+        stroke-width="1.3"
+      />
+      <circle
+        cx="9.99935"
+        cy="10.0003"
+        r="8.33333"
+        stroke="black"
+        stroke-opacity="0.2"
+        stroke-width="1.3"
+      />
+      <circle
+        cx="9.99935"
+        cy="10.0003"
+        r="8.33333"
+        stroke="black"
+        stroke-opacity="0.2"
+        stroke-width="1.3"
+      />
+      <circle
+        cx="9.99935"
+        cy="10.0003"
+        r="8.33333"
+        stroke="black"
+        stroke-opacity="0.2"
+        stroke-width="1.3"
+      />
+      <circle
+        cx="9.99935"
+        cy="10.0003"
+        r="8.33333"
+        stroke="black"
+        stroke-opacity="0.2"
+        stroke-width="1.3"
+      />
+      <circle
+        cx="9.99935"
+        cy="10.0003"
+        r="8.33333"
+        stroke="black"
+        stroke-opacity="0.2"
+        stroke-width="1.3"
+      />
+      <circle
+        cx="9.99935"
+        cy="10.0003"
+        r="8.33333"
+        stroke="black"
+        stroke-opacity="0.2"
+        stroke-width="1.3"
+      />
+      <g opacity="0.5">
+        <path
+          d="M14.974 16.6667C14.8414 14.2571 14.1037 12.5 9.99971 12.5C5.89576 12.5 5.15801 14.2571 5.02539 16.6667"
+          stroke="#191C20"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M14.974 16.6667C14.8414 14.2571 14.1037 12.5 9.99971 12.5C5.89576 12.5 5.15801 14.2571 5.02539 16.6667"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M14.974 16.6667C14.8414 14.2571 14.1037 12.5 9.99971 12.5C5.89576 12.5 5.15801 14.2571 5.02539 16.6667"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M14.974 16.6667C14.8414 14.2571 14.1037 12.5 9.99971 12.5C5.89576 12.5 5.15801 14.2571 5.02539 16.6667"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M14.974 16.6667C14.8414 14.2571 14.1037 12.5 9.99971 12.5C5.89576 12.5 5.15801 14.2571 5.02539 16.6667"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M14.974 16.6667C14.8414 14.2571 14.1037 12.5 9.99971 12.5C5.89576 12.5 5.15801 14.2571 5.02539 16.6667"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+        <path
+          d="M14.974 16.6667C14.8414 14.2571 14.1037 12.5 9.99971 12.5C5.89576 12.5 5.15801 14.2571 5.02539 16.6667"
+          stroke="black"
+          stroke-opacity="0.2"
+          stroke-width="1.3"
+          stroke-linecap="round"
+        />
+      </g>
+    </svg>
+  );
+};
+
+export default CircleUser;

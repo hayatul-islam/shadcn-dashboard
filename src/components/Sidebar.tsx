@@ -94,7 +94,7 @@ const Sidebar = () => {
           ))}
           <hr className="w-[40px] border-stroke-100 mx-auto" />
           <div className="flex justify-center">
-            <Button className="text-white text-[24px] w-[40px] h-[40px] ">
+            <Button className="text-white bg-primary text-[24px] w-[40px] h-[40px] ">
               +
             </Button>
           </div>

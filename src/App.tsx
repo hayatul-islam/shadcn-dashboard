@@ -1,11 +1,11 @@
 import DashboardLayout from "./components/DashboardLayout";
+import TableHeader from "./components/TableHeader";
 
 function App() {
   return (
-  <DashboardLayout>
-    <p>Dashboard</p>
-  </DashboardLayout>
-  
+    <DashboardLayout>
+      <TableHeader />
+    </DashboardLayout>
   );
 }
 
