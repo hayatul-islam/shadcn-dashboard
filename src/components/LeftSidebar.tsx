@@ -1,5 +1,7 @@
 import { status } from "@/constants/constants";
-import { useState } from "react";
+import { ContextProvider } from "@/context/Context";
+import { X } from "lucide-react";
+import { useContext, useState } from "react";
 import Search from "./Search";
 import {
   Accordion,
@@ -12,12 +14,18 @@ import { Calendar } from "./ui/calendar";
 import { Checkbox } from "./ui/checkbox";
 
 const LeftSidebar = () => {
+  const { setIsMenuOpen, isMenuOpen }: any = useContext(ContextProvider);
   const [date, setDate] = useState<Date | undefined>(new Date());
   return (
     <div className="h-full border-r border-stroke-100">
-      <h2 className="text-[24px] font-medium p-8 border-b h-[92px] border-stroke-100 bg-white sticky top-0 z-50">
-        Calendar
-      </h2>
+      <div className="flex justify-between items-center p-4 md:p-8 border-b h-[70px] md:h-[92px] border-stroke-100 bg-white sticky top-0 z-50">
+        <h2 className="text-[20px] md:text-[24px] font-medium ">Calendar</h2>
+        {isMenuOpen && (
+          <button className="md:hidden" onClick={() => setIsMenuOpen(false)}>
+            <X />
+          </button>
+        )}
+      </div>
       <div className="space-y-6 px-6 pt-8 border-r border-stroke-100">
         <Calendar mode="single" selected={date} onSelect={setDate} />
         <hr className="text-stroke-100" />

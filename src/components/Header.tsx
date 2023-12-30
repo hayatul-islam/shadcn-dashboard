@@ -1,12 +1,14 @@
 import FilterIcon from "@/assets/icons/FilterIcon";
 import FullScreenArrowIcon from "@/assets/icons/FullScreenArrowIcon";
+import { ContextProvider } from "@/context/Context";
 import { AlignJustify } from "lucide-react";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Search from "./Search";
 import { Button } from "./ui/button";
 
 const Header = () => {
   const bodyRef = useRef(document.body);
+  const { setIsMenuOpen }: any = useContext(ContextProvider);
 
   const toggleFullScreen = () => {
     if (document.fullscreenElement) {
@@ -17,7 +19,7 @@ const Header = () => {
   };
   return (
     <div className="h-[70px] md:h-[92px] sticky top-0 bg-white z-50 px-4 md:px-8 border-b items-center border-stroke-100 flex justify-between gap-2">
-      <button>
+      <button className="md:hidden" onClick={() => setIsMenuOpen(true)}>
         <AlignJustify size={20} />
       </button>
       <div className="w-[170px] md:w-[280px]">

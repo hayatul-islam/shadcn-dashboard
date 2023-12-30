@@ -4,10 +4,14 @@ import { Dispatch, SetStateAction, createContext, useState } from "react";
 const defaultContextValues = {
   isFullView: false,
   setIsFullView: () => {},
+  isMenuOpen: false,
+  setIsMenuOpen: () => {},
 };
 interface ContextProps {
   isFullView: boolean;
   setIsFullView: Dispatch<SetStateAction<boolean>>;
+  isMenuOpen: boolean;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 // Create a context with default values
@@ -17,10 +21,13 @@ export const ContextProvider =
 // Context component
 export const Context = ({ children }: any) => {
   const [isFullView, setIsFullView] = useState<boolean>(false);
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   const value: ContextProps = {
     isFullView,
     setIsFullView,
+    isMenuOpen,
+    setIsMenuOpen,
   };
 
   return (
