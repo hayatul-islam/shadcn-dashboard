@@ -6,7 +6,7 @@ const FilterIcon = ({ className }: { className?: string }) => {
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`${className} fill-[#191C20] `}
+      className={`${className} fill-[#191C20] w-[16px] md:w-[20px]`}
     >
       <path d="M11.4577 10.9111C11.4577 9.75516 12.4371 8.81808 13.6452 8.81808C14.8533 8.81808 15.8327 9.75516 15.8327 10.9111C15.8327 12.0671 14.8533 13.0041 13.6452 13.0041C12.4371 13.0041 11.4577 12.0671 11.4577 10.9111Z" />
       <path

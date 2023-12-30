@@ -15,7 +15,7 @@ const Calendar = () => {
         {!isFullView && (
           <div
             style={{ width: "284px" }}
-            className="h-[100vh] overflow-y-auto no-scrollbar overflow-hidden"
+            className="h-[100vh] overflow-y-auto no-scrollbar overflow-hidden hidden lg:block"
           >
             <LeftSidebar />
           </div>
@@ -23,7 +23,7 @@ const Calendar = () => {
 
         <div className="space-y-6 w-full h-[100vh] overflow-y-auto no-scrollbar">
           <Header />
-          <div className="w-full px-8 space-y-6 ">
+          <div className="w-full px-4 md:px-8 space-y-6 ">
             <TableHeader />
             <TableCom />
             <DashboardFooter />

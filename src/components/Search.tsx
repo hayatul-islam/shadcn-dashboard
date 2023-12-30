@@ -5,12 +5,12 @@ const Search = ({ placeholder }: { placeholder: string }) => {
   return (
     <div className="relative w-full">
       <Input
-        className="pl-10 border border-stroke-100 bg-stroke w-full"
+        className="pl-10 border border-stroke-100 bg-stroke w-full text-[14px]"
         type="text"
         placeholder={placeholder}
       />
       <SearchIcon
-        size={20}
+        size={18}
         className="absolute top-0 left-3 text-gray translate-y-1/2"
       />
     </div>

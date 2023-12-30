@@ -6,6 +6,7 @@ const FullScreenArrowIcon = () => {
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-[16px] md:w-[20px]"
     >
       <g opacity="0.6">
         <path

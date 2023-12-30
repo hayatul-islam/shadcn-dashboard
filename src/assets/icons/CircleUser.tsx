@@ -6,6 +6,7 @@ const CircleUser = () => {
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="w-[18px] h-[18px]"
     >
       <g opacity="0.5">
         <circle cx="10" cy="7.5" r="2.5" stroke="#191C20" stroke-width="1.3" />

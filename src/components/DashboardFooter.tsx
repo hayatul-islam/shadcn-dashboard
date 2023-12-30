@@ -12,7 +12,9 @@ const DashboardFooter = () => {
         <p className="text-[#8A8F96] text-[14px]"> 1-10 of 69 results</p>
       </div>
       <div className="flex items-center gap-3">
-        <p className="text-[#8A8F96] text-[14px]">Rows per page</p>
+        <p className="text-[#8A8F96] text-[14px]">
+          <span className="hidden md:inline">Rows per</span> Page
+        </p>
         <Popover>
           <PopoverTrigger>
             <div className="flex items-center">
