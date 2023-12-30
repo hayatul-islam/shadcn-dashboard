@@ -26,7 +26,7 @@ const Header = () => {
         <Search placeholder="Search" />
       </div>
       <div className="space-x-2 md:space-x-4">
-        <Button className="space-y-1 md:space-x-2 px-2 md:px-4 h-[35px]">
+        <Button className="space-y-1 md:space-x-2 px-2 md:px-4 h-[35px] md:h-auto">
           <FilterIcon />
           <span className="text-[14px] md:text-[16px]">Filter</span>
         </Button>
