@@ -13,7 +13,11 @@ const DashboardLayout = ({ children }: any) => {
       {isMenuOpen && (
         <div className="relative md:hidden">
           <div className="fixed inset-0 bg-black z-[999] opacity-70" />
-          <div className="absolute top-0 bg-white z-[999] ">
+          <div
+            className={`absolute top-0 bg-white z-[999] duration-500 delay-100  ${
+              isMenuOpen ? "translate-x-0" : "-translate-x-full"
+            } `}
+          >
             <div className="flex ">
               <div className="h-[100vh]">
                 <Sidebar />
