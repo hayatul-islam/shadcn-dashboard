@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
+import Loading from "./Loading";
 
 export default function PrivateRoute({ children }: any) {
   const [isCheck, setIsCheck] = useState(false);
@@ -20,7 +21,11 @@ export default function PrivateRoute({ children }: any) {
   }, [user, isLoading]);
 
   if (!isCheck) {
-    return;
+    return (
+      <div className="flex justify-center items-center h-[100vh]">
+        <Loading />
+      </div>
+    );
   }
 
   return user && isCheck ? children : <Navigate to="/auth/login" />;
